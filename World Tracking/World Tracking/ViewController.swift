@@ -24,9 +24,22 @@ class ViewController: UIViewController {
         let node = SCNNode()
         node.geometry = SCNBox(width: 0.3, height: 0.3, length: 0.3, chamferRadius: 0)
         node.geometry?.firstMaterial?.diffuse.contents = UIColor.blue
-        node.position = SCNVector3(1.0, 0.0, 0.0)
+        node.position = SCNVector3(0.0, 0.0, -0.3)
         
         sceneView.scene.rootNode.addChildNode(node)
+    }
+        
+    @IBAction func resetSession(_ sender: Any) {
+        restart()
+    }
+    
+    func restart() {
+        sceneView?.session.pause()
+        sceneView.scene.rootNode.enumerateChildNodes { (node, _) in
+            node.removeFromParentNode()
+        }
+        
+        sceneView.session.run(configuration, options: [.removeExistingAnchors, .resetTracking])
     }
 }
 
