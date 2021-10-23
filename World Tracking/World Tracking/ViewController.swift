@@ -17,13 +17,16 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         sceneView.debugOptions = [ARSCNDebugOptions.showFeaturePoints, ARSCNDebugOptions.showWorldOrigin]
+        sceneView.autoenablesDefaultLighting = true
+        
         sceneView.session.run(configuration)
     }
 
     @IBAction func addObject(_ sender: Any) {
         let node = SCNNode()
-        node.geometry = SCNBox(width: 0.3, height: 0.3, length: 0.3, chamferRadius: 0)
+        node.geometry = SCNBox(width: 0.3, height: 0.3, length: 0.3, chamferRadius: 0.03)
         node.geometry?.firstMaterial?.diffuse.contents = UIColor.blue
+        node.geometry?.firstMaterial?.specular.contents = UIColor.orange
         node.position = SCNVector3(0.0, 0.0, -0.3)
         
         sceneView.scene.rootNode.addChildNode(node)
@@ -40,6 +43,10 @@ class ViewController: UIViewController {
         }
         
         sceneView.session.run(configuration, options: [.removeExistingAnchors, .resetTracking])
+    }
+    
+    func randomNumbers(firstNum: CGFloat, secondNum: CGFloat) -> CGFloat {
+        return CGFloat(arc4random()) / CGFloat(UINT32_MAX) * abs(firstNum - secondNum) + min(firstNum, secondNum)
     }
 }
 
