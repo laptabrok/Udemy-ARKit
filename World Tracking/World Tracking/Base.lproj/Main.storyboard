@@ -16,13 +16,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0GX-1t-sZX">
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0GX-1t-sZX">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </arscnView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YCz-KN-Nir">
-                                <rect key="frame" x="289" y="803" width="105" height="59"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xFN-I7-3Ri">
+                                <rect key="frame" x="24" y="745" width="130" height="65"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="F63-7v-WhH"/>
+                                    <constraint firstAttribute="width" constant="130" id="Zfj-tv-e2c"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="systemGreenColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Add"/>
+                                <connections>
+                                    <action selector="addObject:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6q3-rj-qsB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YCz-KN-Nir">
+                                <rect key="frame" x="245" y="742" width="130" height="65"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="130" id="Kqw-kX-Kx4"/>
+                                    <constraint firstAttribute="height" constant="65" id="hcu-ks-bfc"/>
+                                </constraints>
                                 <color key="tintColor" systemColor="systemOrangeColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="Reset"/>
@@ -31,19 +46,19 @@
                                     <action selector="resetSession:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kVl-nz-Rzk"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xFN-I7-3Ri">
-                                <rect key="frame" x="20" y="803" width="105" height="59"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <color key="tintColor" systemColor="systemGreenColor"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="Add"/>
-                                <connections>
-                                    <action selector="addObject:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6q3-rj-qsB"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="0GX-1t-sZX" secondAttribute="bottom" id="5ll-eD-XRT"/>
+                            <constraint firstItem="0GX-1t-sZX" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Bie-Tn-WRe"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YCz-KN-Nir" secondAttribute="trailing" constant="25" id="CzN-jg-KLX"/>
+                            <constraint firstItem="0GX-1t-sZX" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="HJK-hk-ziE"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="xFN-I7-3Ri" secondAttribute="bottom" constant="25" id="ejm-7n-m50"/>
+                            <constraint firstItem="xFN-I7-3Ri" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="rAE-FU-3BT"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="YCz-KN-Nir" secondAttribute="bottom" constant="25" id="wKG-jI-LHb"/>
+                            <constraint firstItem="0GX-1t-sZX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="zCF-SS-kW0"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="sceneView" destination="0GX-1t-sZX" id="foi-tv-nmI"/>
@@ -51,7 +66,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-23.188405797101453" y="81.696428571428569"/>
+            <point key="canvasLocation" x="-23.4375" y="81.259150805270863"/>
         </scene>
     </scenes>
     <resources>
